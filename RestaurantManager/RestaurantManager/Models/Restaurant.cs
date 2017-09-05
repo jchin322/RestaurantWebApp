@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RestaurantManager.Models
 {
@@ -41,7 +42,14 @@ namespace RestaurantManager.Models
         public int ZipCode { get; set; }
 
         [Required]
-        public Boolean Manager { get; set; }
+        [StringLength(50)]
+        [Display(Name = "Last Name")]
+        public String ManagerLastName { get; set; }
+
+        [StringLength(50, ErrorMessage = "First name cannot be longer than 50 characters")]
+        [Column("FirstName")]
+        [Display(Name = "First Name")]
+        public String ManagerFirstMidName { get; set; }
 
         [DataType(DataType.Currency)]
         public Decimal QuaterlySales { get; set; }

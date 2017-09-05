@@ -13527,26 +13527,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Matthew\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\chinm\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
-    "restoreSettings": {
-      "hideWarningsAndErrors": true
-    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Matthew\\Desktop\\GitHub Projects\\WebApps\\RestaurantManager2\\RestaurantManager\\RestaurantManager\\RestaurantManager.csproj",
+      "projectUniqueName": "C:\\Users\\chinm\\Desktop\\GitHub Projects\\RestaurantWebApp\\RestaurantManager\\RestaurantManager\\RestaurantManager.csproj",
       "projectName": "RestaurantManager",
-      "projectPath": "C:\\Users\\Matthew\\Desktop\\GitHub Projects\\WebApps\\RestaurantManager2\\RestaurantManager\\RestaurantManager\\RestaurantManager.csproj",
-      "packagesPath": "C:\\Users\\Matthew\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Matthew\\Desktop\\GitHub Projects\\WebApps\\RestaurantManager2\\RestaurantManager\\RestaurantManager\\obj\\",
+      "projectPath": "C:\\Users\\chinm\\Desktop\\GitHub Projects\\RestaurantWebApp\\RestaurantManager\\RestaurantManager\\RestaurantManager.csproj",
+      "packagesPath": "C:\\Users\\chinm\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chinm\\Desktop\\GitHub Projects\\RestaurantWebApp\\RestaurantManager\\RestaurantManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Matthew\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chinm\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13554,7 +13551,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Users\\Matthew\\.dotnet\\NuGetFallbackFolder": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -13571,42 +13567,28 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "MimeKit": {
-            "target": "Package",
-            "version": "1.18.0"
-          },
-          "MailKit": {
-            "target": "Package",
-            "version": "1.18.0"
-          },
-          "Microsoft.EntityFrameworkCore.Tools": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "2.0.0"
-          },
-          "Twilio": {
-            "target": "Package",
-            "version": "5.6.3"
-          },
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "2.0.0"
-          },
           "Microsoft.NETCore.App": {
             "target": "Package",
             "version": "2.0.0",
             "autoReferenced": true
           },
-          "Microsoft.AspNetCore.Authentication.Google": {
+          "MailKit": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "1.18.0"
           },
-          "Microsoft.EntityFrameworkCore.SqlServer": {
+          "Microsoft.ApplicationInsights.AspNetCore": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "2.1.1"
           },
           "Microsoft.AspNetCore.All": {
+            "target": "Package",
+            "version": "2.0.0"
+          },
+          "Microsoft.AspNetCore.Authentication": {
+            "target": "Package",
+            "version": "2.0.0"
+          },
+          "Microsoft.AspNetCore.Authentication.Google": {
             "target": "Package",
             "version": "2.0.0"
           },
@@ -13614,17 +13596,31 @@
             "target": "Package",
             "version": "2.0.0"
           },
-          "Microsoft.ApplicationInsights.AspNetCore": {
-            "target": "Package",
-            "version": "2.1.1"
-          },
-          "Microsoft.AspNetCore.Authentication": {
-            "target": "Package",
-            "version": "2.0.0"
-          },
           "Microsoft.AspNetCore.Rewrite": {
             "target": "Package",
             "version": "2.0.0"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "2.0.0"
+          },
+          "Microsoft.EntityFrameworkCore.Tools": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "2.0.0"
+          },
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "2.0.0"
+          },
+          "MimeKit": {
+            "target": "Package",
+            "version": "1.18.0"
+          },
+          "Twilio": {
+            "target": "Package",
+            "version": "5.6.3"
           }
         },
         "imports": [

@@ -10,3 +10,15 @@ C:\Users\Matthew\Desktop\GitHub Projects\WebApps\RestaurantManager2\RestaurantMa
 C:\Users\Matthew\Desktop\GitHub Projects\WebApps\RestaurantManager2\RestaurantManager\RestaurantManager\bin\Debug\netcoreapp2.0\RestaurantManager.pdb
 C:\Users\Matthew\Desktop\GitHub Projects\WebApps\RestaurantManager2\RestaurantManager\RestaurantManager\obj\Debug\netcoreapp2.0\RestaurantManager.dll
 C:\Users\Matthew\Desktop\GitHub Projects\WebApps\RestaurantManager2\RestaurantManager\RestaurantManager\obj\Debug\netcoreapp2.0\RestaurantManager.pdb
+C:\Users\chinm\Desktop\GitHub Projects\RestaurantWebApp\RestaurantManager\RestaurantManager\bin\Debug\netcoreapp2.0\RestaurantManager.deps.json
+C:\Users\chinm\Desktop\GitHub Projects\RestaurantWebApp\RestaurantManager\RestaurantManager\bin\Debug\netcoreapp2.0\RestaurantManager.runtimeconfig.json
+C:\Users\chinm\Desktop\GitHub Projects\RestaurantWebApp\RestaurantManager\RestaurantManager\bin\Debug\netcoreapp2.0\RestaurantManager.runtimeconfig.dev.json
+C:\Users\chinm\Desktop\GitHub Projects\RestaurantWebApp\RestaurantManager\RestaurantManager\bin\Debug\netcoreapp2.0\RestaurantManager.dll
+C:\Users\chinm\Desktop\GitHub Projects\RestaurantWebApp\RestaurantManager\RestaurantManager\bin\Debug\netcoreapp2.0\RestaurantManager.pdb
+C:\Users\chinm\Desktop\GitHub Projects\RestaurantWebApp\RestaurantManager\RestaurantManager\obj\Debug\netcoreapp2.0\RestaurantManager.csprojResolveAssemblyReference.cache
+C:\Users\chinm\Desktop\GitHub Projects\RestaurantWebApp\RestaurantManager\RestaurantManager\obj\Debug\netcoreapp2.0\RestaurantManager.csproj.CoreCompileInputs.cache
+C:\Users\chinm\Desktop\GitHub Projects\RestaurantWebApp\RestaurantManager\RestaurantManager\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\chinm\Desktop\GitHub Projects\RestaurantWebApp\RestaurantManager\RestaurantManager\obj\Debug\netcoreapp2.0\RestaurantManager.AssemblyInfoInputs.cache
+C:\Users\chinm\Desktop\GitHub Projects\RestaurantWebApp\RestaurantManager\RestaurantManager\obj\Debug\netcoreapp2.0\RestaurantManager.AssemblyInfo.cs
+C:\Users\chinm\Desktop\GitHub Projects\RestaurantWebApp\RestaurantManager\RestaurantManager\obj\Debug\netcoreapp2.0\RestaurantManager.dll
+C:\Users\chinm\Desktop\GitHub Projects\RestaurantWebApp\RestaurantManager\RestaurantManager\obj\Debug\netcoreapp2.0\RestaurantManager.pdb

@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using RestaurantManager.Data;
+using RestaurantManager.Models;
 using System;
 
 namespace RestaurantManager.Data.Migrations
@@ -144,12 +145,10 @@ namespace RestaurantManager.Data.Migrations
                     b.Property<bool>("EmailConfirmed");
 
                     b.Property<string>("FirstMidName")
-                        .IsRequired()
                         .HasColumnName("FirstName")
                         .HasMaxLength(50);
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasMaxLength(50);
 
                     b.Property<bool>("LockoutEnabled");
@@ -186,6 +185,129 @@ namespace RestaurantManager.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("RestaurantManager.Models.Employee", b =>
+                {
+                    b.Property<int>("EmployeeID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CurrentWorkingRestaurant");
+
+                    b.Property<string>("FirstMidName")
+                        .IsRequired()
+                        .HasColumnName("FirstName")
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("HireDate");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<bool>("ManagerStatus");
+
+                    b.Property<decimal>("Wage");
+
+                    b.HasKey("EmployeeID");
+
+                    b.ToTable("Employee");
+                });
+
+            modelBuilder.Entity("RestaurantManager.Models.MenuItem", b =>
+                {
+                    b.Property<int>("MenuItemID");
+
+                    b.Property<string>("FoodName");
+
+                    b.Property<decimal>("FoodPrice");
+
+                    b.Property<int>("FoodType");
+
+                    b.HasKey("MenuItemID");
+
+                    b.ToTable("Menu");
+                });
+
+            modelBuilder.Entity("RestaurantManager.Models.Order", b =>
+                {
+                    b.Property<int>("OrderID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("FirstMidName")
+                        .IsRequired()
+                        .HasColumnName("FirstName")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime>("OrderDate");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired();
+
+                    b.HasKey("OrderID");
+
+                    b.ToTable("Order");
+                });
+
+            modelBuilder.Entity("RestaurantManager.Models.OrderItem", b =>
+                {
+                    b.Property<int>("OrderID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("FoodName");
+
+                    b.Property<int?>("OrderID1");
+
+                    b.Property<decimal>("Price");
+
+                    b.HasKey("OrderID");
+
+                    b.HasIndex("OrderID1");
+
+                    b.ToTable("OrderItem");
+                });
+
+            modelBuilder.Entity("RestaurantManager.Models.Restaurant", b =>
+                {
+                    b.Property<int>("RestaurantID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("BuildingNumber");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<string>("ManagerFirstMidName")
+                        .HasColumnName("FirstName")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("ManagerLastName")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<decimal>("QuaterlySales");
+
+                    b.Property<string>("RestaurantName")
+                        .IsRequired();
+
+                    b.Property<int>("State");
+
+                    b.Property<string>("StreetName")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<decimal>("YearlySales");
+
+                    b.Property<int>("ZipCode");
+
+                    b.HasKey("RestaurantID");
+
+                    b.ToTable("Restaurant");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -231,6 +353,13 @@ namespace RestaurantManager.Data.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("RestaurantManager.Models.OrderItem", b =>
+                {
+                    b.HasOne("RestaurantManager.Models.Order")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderID1");
                 });
 #pragma warning restore 612, 618
         }
