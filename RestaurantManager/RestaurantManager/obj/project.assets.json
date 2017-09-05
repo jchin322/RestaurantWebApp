@@ -13532,6 +13532,9 @@
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
       "projectUniqueName": "C:\\Users\\chinm\\Desktop\\GitHub Projects\\RestaurantWebApp\\RestaurantManager\\RestaurantManager\\RestaurantManager.csproj",
       "projectName": "RestaurantManager",
@@ -13567,36 +13570,34 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
+          "MimeKit": {
             "target": "Package",
-            "version": "2.0.0",
-            "autoReferenced": true
+            "version": "1.18.0"
           },
           "MailKit": {
             "target": "Package",
             "version": "1.18.0"
           },
-          "Microsoft.ApplicationInsights.AspNetCore": {
-            "target": "Package",
-            "version": "2.1.1"
-          },
-          "Microsoft.AspNetCore.All": {
+          "Microsoft.EntityFrameworkCore.Tools": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "2.0.0"
           },
-          "Microsoft.AspNetCore.Authentication": {
+          "Twilio": {
+            "target": "Package",
+            "version": "5.6.3"
+          },
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "2.0.0"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "2.0.0",
+            "autoReferenced": true
           },
           "Microsoft.AspNetCore.Authentication.Google": {
-            "target": "Package",
-            "version": "2.0.0"
-          },
-          "Microsoft.AspNetCore.Mvc": {
-            "target": "Package",
-            "version": "2.0.0"
-          },
-          "Microsoft.AspNetCore.Rewrite": {
             "target": "Package",
             "version": "2.0.0"
           },
@@ -13604,23 +13605,25 @@
             "target": "Package",
             "version": "2.0.0"
           },
-          "Microsoft.EntityFrameworkCore.Tools": {
-            "suppressParent": "All",
+          "Microsoft.AspNetCore.All": {
             "target": "Package",
             "version": "2.0.0"
           },
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-            "suppressParent": "All",
+          "Microsoft.AspNetCore.Mvc": {
             "target": "Package",
             "version": "2.0.0"
           },
-          "MimeKit": {
+          "Microsoft.ApplicationInsights.AspNetCore": {
             "target": "Package",
-            "version": "1.18.0"
+            "version": "2.1.1"
           },
-          "Twilio": {
+          "Microsoft.AspNetCore.Authentication": {
             "target": "Package",
-            "version": "5.6.3"
+            "version": "2.0.0"
+          },
+          "Microsoft.AspNetCore.Rewrite": {
+            "target": "Package",
+            "version": "2.0.0"
           }
         },
         "imports": [
