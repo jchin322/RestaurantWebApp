@@ -18,7 +18,9 @@ namespace RestaurantManager.Models
 
     public class MenuItem
     {
-        public RestaurantMenu MenuItemID { get; set; }
+        public int MenuItemID { get; set; }
+
+        public RestaurantMenu MenuLocation { get; set; }
 
         public string FoodName { get; set; }
 

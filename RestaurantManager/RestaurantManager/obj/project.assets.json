@@ -13527,8 +13527,8 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\chinm\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Matthew\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
@@ -13536,17 +13536,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\chinm\\Desktop\\GitHub Projects\\RestaurantWebApp\\RestaurantManager\\RestaurantManager\\RestaurantManager.csproj",
+      "projectUniqueName": "C:\\Users\\Matthew\\Desktop\\GitHub Projects\\WebApps\\RestaurantWebApp\\RestaurantManager\\RestaurantManager\\RestaurantManager.csproj",
       "projectName": "RestaurantManager",
-      "projectPath": "C:\\Users\\chinm\\Desktop\\GitHub Projects\\RestaurantWebApp\\RestaurantManager\\RestaurantManager\\RestaurantManager.csproj",
-      "packagesPath": "C:\\Users\\chinm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chinm\\Desktop\\GitHub Projects\\RestaurantWebApp\\RestaurantManager\\RestaurantManager\\obj\\",
+      "projectPath": "C:\\Users\\Matthew\\Desktop\\GitHub Projects\\WebApps\\RestaurantWebApp\\RestaurantManager\\RestaurantManager\\RestaurantManager.csproj",
+      "packagesPath": "C:\\Users\\Matthew\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Matthew\\Desktop\\GitHub Projects\\WebApps\\RestaurantWebApp\\RestaurantManager\\RestaurantManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\chinm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Matthew\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13554,6 +13554,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\Matthew\\.dotnet\\NuGetFallbackFolder": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

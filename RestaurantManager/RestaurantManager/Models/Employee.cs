@@ -25,6 +25,7 @@ namespace RestaurantManager.Models
         public DateTime HireDate { get; set; }
 
         [Required]
+        [Display(Name = "Manager Status")]
         public bool ManagerStatus { get; set; }
 
         // Decimal formatting goes here.

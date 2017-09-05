@@ -12,7 +12,7 @@ namespace RestaurantManager.Data
         }
 
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<MenuItem> Menus { get; set; }
+        public DbSet<MenuItem> MenuItems { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Restaurant> Restaurants { get; set; }
@@ -25,7 +25,7 @@ namespace RestaurantManager.Data
             // Add your customizations after calling base.OnModelCreating(builder);
 
             builder.Entity<Employee>().ToTable("Employee");
-            builder.Entity<MenuItem>().ToTable("Menu");
+            builder.Entity<MenuItem>().ToTable("MenuItem");
             builder.Entity<Order>().ToTable("Order");
             builder.Entity<OrderItem>().ToTable("OrderItem");
             builder.Entity<Restaurant>().ToTable("Restaurant");

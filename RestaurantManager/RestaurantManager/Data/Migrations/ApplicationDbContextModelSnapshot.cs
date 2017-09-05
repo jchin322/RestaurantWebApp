@@ -216,7 +216,8 @@ namespace RestaurantManager.Data.Migrations
 
             modelBuilder.Entity("RestaurantManager.Models.MenuItem", b =>
                 {
-                    b.Property<int>("MenuItemID");
+                    b.Property<int>("MenuItemID")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("FoodName");
 
@@ -224,9 +225,11 @@ namespace RestaurantManager.Data.Migrations
 
                     b.Property<int>("FoodType");
 
+                    b.Property<int>("MenuLocation");
+
                     b.HasKey("MenuItemID");
 
-                    b.ToTable("Menu");
+                    b.ToTable("MenuItem");
                 });
 
             modelBuilder.Entity("RestaurantManager.Models.Order", b =>

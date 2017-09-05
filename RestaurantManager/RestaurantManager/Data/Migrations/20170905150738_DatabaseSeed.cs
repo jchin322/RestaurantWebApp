@@ -49,14 +49,14 @@ namespace RestaurantManager.Data.Migrations
                 name: "Menu",
                 columns: table => new
                 {
-                    MenuItemID = table.Column<int>(type: "int", nullable: false),
+                    MenuLocation = table.Column<int>(type: "int", nullable: false),
                     FoodName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FoodPrice = table.Column<decimal>(type: "decimal(18, 2)", nullable: false),
                     FoodType = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Menu", x => x.MenuItemID);
+                    table.PrimaryKey("PK_Menu", x => x.MenuLocation);
                 });
 
             migrationBuilder.CreateTable(
