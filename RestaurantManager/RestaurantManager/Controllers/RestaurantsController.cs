@@ -34,6 +34,7 @@ namespace RestaurantManager.Controllers
             }
 
             var restaurant = await _context.Restaurants
+                .AsNoTracking
                 .SingleOrDefaultAsync(m => m.RestaurantID == id);
             if (restaurant == null)
             {

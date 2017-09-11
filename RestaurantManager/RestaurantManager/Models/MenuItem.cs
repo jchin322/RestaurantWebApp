@@ -20,12 +20,16 @@ namespace RestaurantManager.Models
     {
         public int MenuItemID { get; set; }
 
+        [Display(Name = "Location")]
         public RestaurantMenu MenuLocation { get; set; }
 
+        [Display(Name = "Name")]
         public string FoodName { get; set; }
 
+        [Display(Name = "Type")]
         public FoodType FoodType { get; set; }
 
+        [Display(Name = "Price")]
         [DataType(DataType.Currency)]
         public Decimal FoodPrice { get; set; }
     }

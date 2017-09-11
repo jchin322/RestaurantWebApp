@@ -34,6 +34,7 @@ namespace RestaurantManager.Controllers
             }
 
             var menuItem = await _context.MenuItems
+                .AsNoTracking()
                 .SingleOrDefaultAsync(m => m.MenuItemID == id);
             if (menuItem == null)
             {
@@ -54,7 +55,7 @@ namespace RestaurantManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MenuItemID,MenuLocation,FoodName,FoodType,FoodPrice")] MenuItem menuItem)
+        public async Task<IActionResult> Create([Bind("MenuLocation,FoodName,FoodType,FoodPrice")] MenuItem menuItem)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +87,7 @@ namespace RestaurantManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MenuItemID,MenuLocation,FoodName,FoodType,FoodPrice")] MenuItem menuItem)
+        public async Task<IActionResult> Edit(int id, [Bind("MenuLocation,FoodName,FoodType,FoodPrice")] MenuItem menuItem)
         {
             if (id != menuItem.MenuItemID)
             {

@@ -34,6 +34,7 @@ namespace RestaurantManager.Controllers
             }
 
             var employee = await _context.Employees
+                .AsNoTracking()
                 .SingleOrDefaultAsync(m => m.EmployeeID == id);
             if (employee == null)
             {
@@ -54,7 +55,7 @@ namespace RestaurantManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmployeeID,LastName,FirstMidName,HireDate,ManagerStatus,Wage,CurrentWorkingRestaurant")] Employee employee)
+        public async Task<IActionResult> Create([Bind("LastName,FirstMidName,HireDate,ManagerStatus,Wage,CurrentWorkingRestaurant")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +87,7 @@ namespace RestaurantManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EmployeeID,LastName,FirstMidName,HireDate,ManagerStatus,Wage,CurrentWorkingRestaurant")] Employee employee)
+        public async Task<IActionResult> Edit(int id, [Bind("LastName,FirstMidName,HireDate,ManagerStatus,Wage,CurrentWorkingRestaurant")] Employee employee)
         {
             if (id != employee.EmployeeID)
             {
