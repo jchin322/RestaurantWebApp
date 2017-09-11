@@ -24,6 +24,7 @@ namespace RestaurantManager.Models
         public RestaurantMenu MenuLocation { get; set; }
 
         [Display(Name = "Name")]
+        [Required]
         public string FoodName { get; set; }
 
         [Display(Name = "Type")]
