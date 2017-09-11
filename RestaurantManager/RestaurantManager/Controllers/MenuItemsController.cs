@@ -20,9 +20,36 @@ namespace RestaurantManager.Controllers
         }
 
         // GET: MenuItems
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(RestaurantMenu? restaurant)
         {
-            return View(await _context.MenuItems.ToListAsync());
+            if (restaurant == null)
+            {
+                return View(await _context.MenuItems.ToListAsync());
+            }
+            else // we have clicked on the gallery Menu link for a specific restaurant
+            {
+                switch (restaurant) // Check the restaurant id from the URL
+                {
+                    case RestaurantMenu.LP:
+                        ViewData["RestaurantName"] = "La Pizza";
+                        break;
+                    case RestaurantMenu.LPF:
+                        ViewData["RestaurantName"] = "Le Poulet Frise";
+                        break;
+                    case RestaurantMenu.DRE:
+                        ViewData["RestaurantName"] = "Den Rosa Elefanten";
+                        break;
+                }
+
+                // Return to the view only the menu items that are related
+                // to the selected restaurant.
+                var specMenuItems = await _context.MenuItems
+                    .AsNoTracking()
+                    .Where(r => r.MenuLocation == restaurant)
+                    .ToListAsync();
+
+                return View(specMenuItems);
+            }
         }
 
         // GET: MenuItems/Details/5
