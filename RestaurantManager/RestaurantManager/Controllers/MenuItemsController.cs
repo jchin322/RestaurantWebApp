@@ -19,12 +19,21 @@ namespace RestaurantManager.Controllers
             _context = context;
         }
 
+        private readonly string query = "SELECT * FROM MenuItem ORDER BY MenuLocation, FoodType";
+        private readonly string specQuey = "SELECT * FROM MenuItem WHERE MenuLocation = {0} ORDER BY FoodType";
+
         // GET: MenuItems
         public async Task<IActionResult> Index(RestaurantMenu? restaurant)
         {
             if (restaurant == null)
             {
-                return View(await _context.MenuItems.ToListAsync());
+                // Retrieve all menu items and info
+                // then order them on restaurant and food type.
+                var sortedMenuItems = await _context.MenuItems
+                    .FromSql(query)
+                    .AsNoTracking()
+                    .ToListAsync();
+                return View(sortedMenuItems);
             }
             else // we have clicked on the gallery Menu link for a specific restaurant
             {
@@ -42,13 +51,13 @@ namespace RestaurantManager.Controllers
                 }
 
                 // Return to the view only the menu items that are related
-                // to the selected restaurant.
-                var specMenuItems = await _context.MenuItems
+                // to the selected restaurant and order them
+                // by restaurant and food type.
+                var specSortedMenuItems = await _context.MenuItems
+                    .FromSql(specQuey, restaurant)
                     .AsNoTracking()
-                    .Where(r => r.MenuLocation == restaurant)
                     .ToListAsync();
-
-                return View(specMenuItems);
+                return View(specSortedMenuItems);
             }
         }
 
