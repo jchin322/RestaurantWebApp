@@ -37,6 +37,10 @@ namespace RestaurantManager.Controllers
             }
             else // we have clicked on the gallery Menu link for a specific restaurant
             {
+                ViewData["Appetizer"] = "Appetizers";
+                ViewData["Entree"] = "Entrees";
+                ViewData["Dessert"] = "Desserts";
+                ViewData["Drink"] = "Drinks";
                 switch (restaurant) // Check the restaurant id from the URL
                 {
                     case RestaurantMenu.LP:
@@ -49,7 +53,6 @@ namespace RestaurantManager.Controllers
                         ViewData["RestaurantName"] = "Den Rosa Elefanten";
                         break;
                 }
-
                 // Return to the view only the menu items that are related
                 // to the selected restaurant and order them
                 // by restaurant and food type.

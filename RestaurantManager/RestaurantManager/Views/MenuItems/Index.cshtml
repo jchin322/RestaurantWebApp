@@ -5,45 +5,89 @@
 
 @if (ViewData["RestaurantName"] != null)
 {
-    <h2>@ViewData["RestaurantName"]</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.FoodName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FoodType)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FoodPrice)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(model => item.FoodName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(model => item.FoodType)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(model => item.FoodPrice)
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <h2>@ViewData["RestaurantName"]</h2><br />
+    <h4>@ViewData["Appetizer"]</h4><hr />
+    @foreach (var appetizer in Model)
+    {
+        @switch (appetizer.FoodType)
+        {
+            case FoodType.Appetizer:
+                <p>@Html.DisplayFor(model => appetizer.FoodName) @Html.DisplayFor(model => appetizer.FoodPrice)</p>
+                break;
+        }
+    }
+    <br />
+    <h4>@ViewData["Entree"]</h4><hr />
+    @foreach (var entree in Model)
+    {
+        @switch (entree.FoodType)
+        {
+            case FoodType.Entree:
+                <p>@Html.DisplayFor(model => entree.FoodName) @Html.DisplayFor(model => entree.FoodPrice)</p>
+                break;
+        }
+    }
+    <br />
+    <h4>@ViewData["Dessert"]</h4><hr />
+    @foreach (var dessert in Model)
+    {
+        @switch (dessert.FoodType)
+        {
+            case FoodType.Dessert:
+                <p>@Html.DisplayFor(model => dessert.FoodName) @Html.DisplayFor(model => dessert.FoodPrice)</p>
+                break;
+        }
+    }
+    <br />
+    <h4>@ViewData["Drink"]</h4><hr />
+    @foreach (var drink in Model)
+    {
+        @switch (drink.FoodType)
+        {
+            case FoodType.Drink:
+                <p>@Html.DisplayFor(model => drink.FoodName) @Html.DisplayFor(model => drink.FoodPrice)</p>
+                break;
+
+        }
+    }
 }
+    @*<table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FoodName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FoodType)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FoodPrice)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => item.FoodName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.FoodType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.FoodPrice)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>*@
 else
 {
     <h2>All Menu Items</h2>
     <p>
-        <a asp-action="Create">Create New</a>
+        <a asp-action="Create">Add menu item.</a>
     </p>
     <table class="table">
         <thead>
