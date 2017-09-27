@@ -20,9 +20,35 @@ namespace RestaurantManager.Controllers
         }
 
         // GET: Employees
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            return View(await _context.Employees.ToListAsync());
+            ViewData["NameSortParam"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParam"] = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewData["CurrentFilter"] = searchString;
+
+            var employees = from e in _context.Employees select e;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                employees = employees.Where(e => e.LastName.Contains(searchString)
+                    || e.FirstMidName.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    employees = employees.OrderByDescending(e => e.LastName);
+                    break;
+                case "Date":
+                    employees = employees.OrderBy(e => e.HireDate);
+                    break;
+                case "date_desc":
+                    employees = employees.OrderByDescending(e => e.HireDate);
+                    break;
+                default:
+                    employees = employees.OrderBy(e => e.LastName);
+                    break;
+            }
+            return View(await employees.AsNoTracking().ToListAsync());
         }
 
         // GET: Employees/Details/5
