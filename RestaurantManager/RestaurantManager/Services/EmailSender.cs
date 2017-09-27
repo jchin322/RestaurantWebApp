@@ -44,21 +44,6 @@ namespace RestaurantManager.Services
                 client.Send(mail);
                 client.Disconnect(true);
                 return Task.CompletedTask;
-                // Send via mailgun API
-                //RestClient client = new RestClient
-                //{
-                //    BaseUrl = new Uri("https://api.mailgun.net/v3"),
-                //    Authenticator = new HttpBasicAuthenticator("api", apiKey)
-                //};
-                //RestRequest request = new RestRequest();
-                //request.AddParameter("domain", "sandboxd924539cd7ae4e36833ceaf877522b27.mailgun.org", ParameterType.UrlSegment);
-                //request.Resource = "{domain}/messages";
-                //request.AddParameter("from", "myRestaurant <mailgun@sandboxd924539cd7ae4e36833ceaf877522b27.mailgun.org>");
-                //request.AddParameter("to", email);
-                //request.AddParameter("subject", subject);
-                //request.AddParameter("text", message);
-                //request.Method = Method.POST;
-                //return client.ExecuteTaskAsync(request);
             }
         }
     }

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RestaurantManager.Data;
 using RestaurantManager.Models;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace RestaurantManager.Controllers
 {
@@ -21,19 +19,60 @@ namespace RestaurantManager.Controllers
 
         private readonly string query = "SELECT * FROM MenuItem ORDER BY MenuLocation, FoodType";
         private readonly string specQuey = "SELECT * FROM MenuItem WHERE MenuLocation = {0} ORDER BY FoodType";
+        private string filterQuery;
 
         // GET: MenuItems
-        public async Task<IActionResult> Index(RestaurantMenu? restaurant)
+        public async Task<IActionResult> Index(RestaurantMenu? restaurant, string searchString)
         {
-            if (restaurant == null)
+            // A search string was entered, filter on this.
+            if (!String.IsNullOrEmpty(searchString) && restaurant == null)
             {
-                // Retrieve all menu items and info
+                // Translate the search string to menu item.
+                // Strip all spaces to account for malformed user input.
+                switch (searchString.ToLower().Replace(" ", "").Trim())
+                {
+                    case "lapizza":
+                        filterQuery = "SELECT * FROM MenuItem WHERE MenuLocation = 0 ORDER BY MenuLocation, FoodType";
+                        break;
+                    case "lepouletfrise":
+                        filterQuery = "SELECT * FROM MenuItem WHERE MenuLocation = 1 ORDER BY MenuLocation, FoodType";
+                        break;
+                    case "denrosaelefanten":
+                        filterQuery = "SELECT * FROM MenuItem WHERE MenuLocation = 2 ORDER BY MenuLocation, FoodType";
+                        break;
+                    default:
+                        // Null searchString to indicate bad input.
+                        searchString = null;
+                        break;
+                }
+                // Retrieve all filtered menu items and info
                 // then order them on restaurant and food type.
-                var sortedMenuItems = await _context.MenuItems
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    var filteredMenuItems = await _context.MenuItems
+                        .FromSql(filterQuery)
+                        .AsNoTracking()
+                        .ToListAsync();
+                    return View(filteredMenuItems);
+                }
+                // Update current filter string;
+                //ViewData["CurrentFilter"] = searchString;
+                ViewData["FilterCheck"] = "true";
+                var defaultMenuItems = await _context.MenuItems
                     .FromSql(query)
                     .AsNoTracking()
                     .ToListAsync();
-                return View(sortedMenuItems);
+                return View(defaultMenuItems);
+            }
+            // First time seeing all menu items with no filter value
+            // return all items.
+            else if (String.IsNullOrEmpty(searchString) && restaurant == null)
+            {
+                var defaultMenuItems = await _context.MenuItems
+                    .FromSql(query)
+                    .AsNoTracking()
+                    .ToListAsync();
+                return View(defaultMenuItems);
             }
             else // we have clicked on the gallery Menu link for a specific restaurant
             {
@@ -90,8 +129,6 @@ namespace RestaurantManager.Controllers
         }
 
         // POST: MenuItems/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("MenuLocation,FoodName,FoodType,FoodPrice")] MenuItem menuItem)
@@ -122,8 +159,6 @@ namespace RestaurantManager.Controllers
         }
 
         // POST: MenuItems/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("MenuLocation,FoodName,FoodType,FoodPrice")] MenuItem menuItem)
