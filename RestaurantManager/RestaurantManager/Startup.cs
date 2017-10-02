@@ -34,6 +34,7 @@ namespace RestaurantManager
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+            services.AddTransient<ISMSSender, SMSSender>();
 
             services.AddMvc();
 
