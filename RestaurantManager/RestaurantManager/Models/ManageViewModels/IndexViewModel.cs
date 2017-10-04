@@ -12,6 +12,8 @@ namespace RestaurantManager.Models.ManageViewModels
 
         public bool IsEmailConfirmed { get; set; }
 
+        public bool IsPhoneConfirmed { get; set; }
+
         [Required]
         [EmailAddress]
         public string Email { get; set; }

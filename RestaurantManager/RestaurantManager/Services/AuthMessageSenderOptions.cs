@@ -9,7 +9,7 @@ namespace RestaurantManager.Services
     {
         public string MailGunKey { get; set; }
         public string smtpPw { get; set; }
-        public string SMSAccoundIdentification { get; set; }
+        public string SMSAccountIdentification { get; set; }
         public string SMSAccountPassword { get; set; }
         public string SMSAccountFrom { get; set; }
     }

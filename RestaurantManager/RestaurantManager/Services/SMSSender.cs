@@ -20,7 +20,7 @@ namespace RestaurantManager.Services
 
         public Task SendSMSAsync(string number, string message)
         {
-            var accoundSid = Options.SMSAccoundIdentification;
+            var accoundSid = Options.SMSAccountIdentification;
             var authToken = Options.SMSAccountPassword;
             var smsFrom = Options.SMSAccountFrom;
 
